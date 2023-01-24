@@ -1,11 +1,17 @@
 package com.example.spring.boot.ca.domain.model.course.attributes;
 
+
 public class CourseId {
 
     private final Long value;
 
     public CourseId(Long value) {
-        this.value = value;
+        if (value == null) {
+            throw new IllegalArgumentException("Value must not be null");
+        }else {
+            this.value = value;
+        }
+
     }
 
     public Long getValue() {
